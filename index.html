@@ -1,0 +1,87 @@
+<!DOCTYPE>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title> Home </title>
+    <link rel="shortcut icon" href="assets\images\booking.png">
+
+    <link  href="CSS\intex-style.css" rel="stylesheet"/>
+    <link  href="assets/css/fontawesome.min.css" rel="stylesheet"/>
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+/>
+
+     <link rel="stylesheet" href="assets\css\jquery-ui.theme.css">
+  </head>
+
+  <body>
+
+    <header class="intex-menu">
+      <span id="hotel" href="#"></i>Hotels</span>
+      <span id="home" href="#"><i class="fas fa-home"></i>Home |</span>
+      <a id="register" href="./register.html"><i class="fas fa-user-plus"></i>Sign up |</a>
+      <a id="login" href="./login.html"><i class="fas fa-sign-in-alt"></i>Login |</a>
+
+    </header>
+
+    <main>
+      <section class="image">
+        <div class="box">
+          <form name="searchForm" method="get" action="list.html"  onsubmit="return validateForm()">
+
+            <!-- Select City -->
+            <div class="city-type">
+              <select  name="city"  id="city">
+                <option value="" disabled selected class="stable">City *</option>
+                <option value="Thessaloniki">Thessaloniki</option>
+                <option value="Ahtens">Ahtens</option>
+                <option value="Kavala">Kavala</option>
+              </select>
+
+            <!-- select room type -->
+              <select id="room-type" >
+                <option value="" disabled selected class="stable">Room Type</option>
+                <option value="Single Room">Single Room</option>
+                <option value="Double Room">Double Room</option>
+                <option value="Triple Room">Triple Room</option>
+                <option value="Fourfold Room">Fourfold Room</option>
+              </select>
+            </div>
+
+            <!-- Checkin-Chekout -->
+            <div class="Checkin-checkout" id="Checkin-checkout">
+              <input id="check_in_date" name="check_in_date"  type="text" placeholder="Check-in Date *" class="checkin"/>
+              <input id="check_out_date" name="check_out_date" type="text" placeholder="Check-out Date *"class="checkout"/>
+              <div class="text-danger error1">Cannot select a date in the past.</div>
+              <div class="text-danger error2">Checkout date is greater than Checkin date.</div>
+           </div>
+
+            <!-- Search button -->
+            <div >
+              <button disabled type="submit" class="Search-button" id="search"> Search </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    <main>
+
+    <footer>
+      <p>© CollegLink 2021</>
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="./JS/intex-js.js"></script>
+    <script src="./JS/datepicker.js"></script>
+    <script src="./JS/validate-checkin-checkout.js"></script>
+
+  </body>
+</html>

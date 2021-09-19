@@ -1,0 +1,328 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> List </title>
+    <link rel="shortcut icon" href="assets\images\booking.png">
+
+
+    <link  href="CSS\room-style.css" rel="stylesheet"/>
+    <link  href="CSS\list-style.css" rel="stylesheet"/>
+    <link  href="CSS\intex-style.css" rel="stylesheet"/>
+    <link  href="assets/css/fontawesome.min.css" rel="stylesheet"/>
+
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css"
+    />
+
+     <link rel="stylesheet" href="assets\css\jquery-ui.theme.css">
+
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <span id="hotel" href="#"></i>Hotels</span>
+        <a id="home" href="./index.html"><i class="fas fa-home"></i>Home |</a>
+        <a id="user" href="./profile.html"><i class="fas fa-user"></i>Profile</a>
+      </div>
+      <hr class="menu-line">
+    </header>
+
+    <main class="container list-section">
+      <div id="mySidebar" class="sidebar">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeFilter()"><i class="fas fa-times"></i></a>
+         <section class="filter-mob">
+           <form name="searchForm" method="get" action="list.html">
+             <h1>FIND THE PERFECT HOTEL</h1>
+             <!-- Select count of Guests -->
+             <div class="city-type">
+               <select id="count-guest" >
+                 <option value="0" selected>Count of Guests</option>
+                 <option value="Single Room">1</option>
+                 <option value="Double Room">2</option>
+                 <option value="Triple Room">3</option>
+                 <option value="Fourfold Room">4</option>
+               </select>
+             </div>
+             <!-- select room type -->
+             <div class="city-type">
+               <select id="room-type" >
+                 <option value="0" selected>Room Type</option>
+                 <option value="Single Room">Single Room</option>
+                 <option value="Double Room">Double Room</option>
+                 <option value="Triple Room">Triple Room</option>
+                 <option value="Fourfold Room">Fourfold Room</option>
+               </select>
+             </div>
+
+               <!-- Select City -->
+               <div class="city-type">
+                 <select  id="city">
+                   <option value="0" selected>City</option>
+                   <option value="Thessaloniki">Thessaloniki</option>
+                   <option value="Ahtens">Ahtens</option>
+                   <option value="Kavala">Kavala</option>
+                 </select>
+               </div>
+
+               <div class="filter-price">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                 <div class="rangeslider">
+                   <span class="range_min light left">0 €</span>
+                   <span class="range_max light right">5000 €</span>
+                   <input class="min" name="range_1" type="range" min="0" max="5000" value="0" />
+                   <input class="max" name="range_1" type="range" min="0" max="5000" value="5000" />
+                 </div>
+                 <ul class="min-max">
+                   <h3>PRICE MIN.</h3>
+                   <h3 class="max-rig">PRICE MAX.</h3>
+                 </ul>
+               </div>
+
+               <!-- Checkin-Chekout -->
+               <div class="Checkin-checkout">
+                 <input type="text" placeholder="Check-in Date" id="checkin" />
+               </div>
+               <div class="Checkin-checkout">
+                 <input type="text" placeholder="Check-out Date"id="checkout" />
+               </div>
+
+               <!-- Find button -->
+               <div>
+                 <button class="find-button mob-button">FIND HOTEL</button>
+               </div>
+             </form>
+
+           </div>
+         </section>
+       </div>
+       <div id="mob-filter">
+         <button class="openbtn" onclick="openFilter()"><i class="fas fa-filter"></i>Filter</button>
+       </div>
+
+        <!-- Filter Section -->
+        <section class="filter">
+          <form name="searchForm" method="get" action="list.html">
+            <h1>FIND THE PERFECT HOTEL</h1>
+            <!-- Select count of Guests -->
+            <div class="city-type">
+              <select id="count-guest" >
+                <option value="0" selected>Count of Guests</option>
+                <option value="Single Room">1</option>
+                <option value="Double Room">2</option>
+                <option value="Triple Room">3</option>
+                <option value="Fourfold Room">4</option>
+              </select>
+            </div>
+            <!-- select room type -->
+            <div class="city-type">
+              <select id="room-type" >
+                <option value="0" selected>Room Type</option>
+                <option value="Single Room">Single Room</option>
+                <option value="Double Room">Double Room</option>
+                <option value="Triple Room">Triple Room</option>
+                <option value="Fourfold Room">Fourfold Room</option>
+              </select>
+            </div>
+
+            <!-- Select City -->
+            <div class="city-type">
+              <select  id="city">
+                <option value="0" selected>City</option>
+                <option value="Thessaloniki">Thessaloniki</option>
+                <option value="Ahtens">Ahtens</option>
+                <option value="Kavala">Kavala</option>
+              </select>
+            </div>
+
+            <div class="filter-price">
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+              <div class="rangeslider">
+                <span class="range_min light left">0 €</span>
+                <span class="range_max light right">5000 €</span>
+                <input class="min" name="range_1" type="range" min="0" max="5000" value="0" />
+                <input class="max" name="range_1" type="range" min="0" max="5000" value="5000" />
+              </div>
+              <ul class="min-max">
+                <h3>PRICE MIN.</h3>
+                <h3 class="max-rig">PRICE MAX.</h3>
+              </ul>
+            </div>
+
+            <!-- Checkin-Chekout -->
+            <div class="Checkin-checkout">
+              <input  id="check_in_date" name="check_in_date" type="text" placeholder="Check-in Date" class="checkin" />
+            </div>
+            <div class="Checkin-checkout">
+              <input id="check_out_date" name="check_out_date" type="text" placeholder="Check-out Date" class="checkout" />
+            </div>
+
+            <!-- Find button -->
+            <div>
+              <button class="find-button">FIND HOTEL</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Search Result Section -->
+        <section class="results">
+          <h1>Search Results</h1>
+          <!-- Search results -->
+          <div class="row">
+            <!-- image -->
+            <div class="hotel-img">
+              <!-- <img src="./assets/images/room-1.jpg" alt=""> -->
+            </div>
+            <!-- hotel info -->
+            <div class="hotel-info">
+              <!-- hotel name -->
+              <h3 class="list-name">Hilton hotel</h3>
+              <!-- location -->
+              <ul>
+                <h3 class="list-city">Athens,</h3>
+                <!-- <h4>, </h4> -->
+                <h3 class="list-area">Zwgrafou</h3>
+              </ul>
+              <!-- description -->
+              <p>Lorem Ipsum is simply dummy
+                text of the printing and typesetting
+                industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since
+                the 1500s.
+              </p>
+              <!-- go to room button -->
+              <p align="right">
+                <button type="button" name="button" class="go-room">
+                  <a href="./room.html">Go to Room Page</a></button>
+              </p>
+            </div>
+          </div>
+          <!-- room informations -->
+          <div class="row">
+            <!-- cost per night -->
+            <div class="night-cost">
+              <h3 class="per-night">Per Night: 350€</h3>
+            </div>
+            <!-- type and guests  -->
+            <div class="guests-type">
+                <div class="list-guests">
+                  <h3>Count of Guests: 1</h3>
+                </div>
+                <div class="list-type">
+                  <h3>Type of Room: Single Room</h3>
+                </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <!-- image -->
+            <div class="hotel-img">
+              <!-- <img src="./assets/images/room-1.jpg" alt=""> -->
+            </div>
+            <!-- hotel info -->
+            <div class="hotel-info">
+              <!-- hotel name -->
+              <h3 class="list-name">Hotel Oceanis</h3>
+              <!-- location -->
+              <ul>
+                <h3 class="list-city">Kavala,</h3>
+                <!-- <h4>, </h4> -->
+                <h3 class="list-area">Paralia</h3>
+              </ul>
+              <!-- description -->
+              <p>Lorem Ipsum is simply dummy
+                text of the printing and typesetting
+                industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since
+                the 1500s.
+              </p>
+              <!-- go to room button -->
+              <p align="right">
+                <button type="button" name="button" class="go-room">
+                  <a href="./room.html">Go to Room Page</a></button>
+              </p>
+            </div>
+          </div>
+          <!-- room informations -->
+          <div class="row">
+            <!-- cost per night -->
+            <div class="night-cost">
+              <h3 class="per-night">Per Night: 200€</h3>
+            </div>
+            <!-- type and guests  -->
+            <div class="guests-type">
+                <div class="list-guests">
+                  <h3>Count of Guests: 2</h3>
+                </div>
+                <div class="list-type">
+                  <h3>Type of Room: Room</h3>
+                </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <!-- image -->
+            <div class="hotel-img">
+              <!-- <img src="./assets/images/room-1.jpg" alt=""> -->
+            </div>
+            <!-- hotel info -->
+            <div class="hotel-info">
+              <!-- hotel name -->
+              <h3 class="list-name">Megali Vretania Hotel</h3>
+              <!-- location -->
+              <ul>
+                <h3 class="list-city">Athens,</h3>
+                <!-- <h4>, </h4> -->
+                <h3 class="list-area">Syntagma</h3>
+              </ul>
+              <!-- description -->
+              <p>Lorem Ipsum is simply dummy
+                text of the printing and typesetting
+                industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since
+                the 1500s.
+              </p>
+              <!-- go to room button -->
+              <p align="right">
+                <button type="button" name="button" class="go-room">Go to Room Page</button>
+              </p>
+            </div>
+          </div>
+          <div class="row">
+            <!-- cost per night -->
+            <div class="night-cost">
+              <h3 class="per-night">Per Night: 500€</h3>
+            </div>
+            <!-- type and guests  -->
+            <div class="guests-type">
+                <div class="list-guests">
+                  <h3>Count of Guests: 2</h3>
+                </div>
+                <div class="list-type">
+                  <h3>Type of Room: Room</h3>
+                </div>
+            </div>
+          </div>
+
+          <hr class="map-line">
+      </section>
+    </main>
+    <footer>
+      <button onclick="topFunction()" id="toTopBtn" title="Go to top"></button>
+      <p>© CollegLink 2021</>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="./JS/datepicker.js"></script>
+    <script src="./JS/intex-js.js"></script>
+    <script src="./JS/list-js.js"></script>
+    <script src="./JS/mobile-filter.js"></script>
+    <script src="./JS/toTopButton.js"></script>
+
+  </body>
+</html>

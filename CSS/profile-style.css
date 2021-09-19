@@ -1,0 +1,112 @@
+#user{
+  color: #e65423;
+}
+
+#mob-favorites button{
+  width: 150px;
+}
+
+#mob-reviews button{
+  width: 150px;
+  margin-left: 180px;
+}
+
+.sidebar2 {
+  height: auto;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 40px;
+  left: 180px;
+  background-color: #FFFFFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 20px;
+  border-radius: 4px;
+}
+
+.booking-info{
+  margin: auto;
+}
+
+.booking-info h3{
+  font-size: 12px;
+}
+
+
+.booking-info .list-type{
+  padding-left: 10px;
+}
+
+.booking-info .list-type h3 {
+    padding-top: 17px;
+  }
+
+.favorites-reviews{
+  height: auto;
+}
+.favorites-reviews h1{
+  text-align: left;
+  padding-left: 10px;
+  padding-bottom: 0px;
+}
+
+.profile-favorites li,
+.profile-reviews li
+{
+  font-weight:  normal;
+  font-size: 18px;
+}
+
+.profile-reviews .stars{
+  font-size: 10px;
+  padding: 10px 10px;
+}
+
+@media (min-width: 640px){
+  .profile-favorites li,
+  .profile-reviews li
+  {
+    font-size: 20px;
+  }
+  .profile-reviews .stars{
+    font-size: 10px;
+    padding: 10px 10px;
+  }
+  .total-cost{
+    font-size: 15px;
+  }
+ }
+
+ @media (min-width: 960px) {
+   #mob-favorites,
+   #mob-reviews
+   {
+     display: none;
+   }
+   .profile-favorites li,
+   .profile-reviews li
+   {
+     font-size: 24px;
+   }
+   .profile-reviews .stars{
+     font-size: 14px;
+     padding: 10px 10px;
+   }
+   .total-cost{
+     font-size: 18px;
+   }
+  }
+
+ @media (min-width: 1280px) {
+   .profile-favorites li,
+   .profile-reviews li
+   {
+     font-size: 26px;
+   }
+   .profile-reviews .stars{
+     font-size: 18px;
+     padding: 10px 20px;
+   }
+
+ }
